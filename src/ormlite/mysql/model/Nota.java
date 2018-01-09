@@ -16,6 +16,6 @@ public class Nota {
     @DatabaseField
     public String texto;
     
-    @DatabaseField(dataType = DataType.DATE)
+    @DatabaseField(dataType = DataType.DATE, canBeNull = false)
     public Date fecha;
 }
