@@ -3,6 +3,7 @@ package ormlite.mysql.app;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import ormlite.mysql.model.Nota;
 
 /**

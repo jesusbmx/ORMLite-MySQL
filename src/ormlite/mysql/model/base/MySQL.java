@@ -1,8 +1,9 @@
 package ormlite.mysql.model.base;
 
-import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import java.io.IOException;
 import java.sql.SQLException;
+
+import com.j256.ormlite.jdbc.JdbcConnectionSource;
 
 // crea una fuente de conexión a nuestra base de datos
 public class MySQL extends JdbcConnectionSource {

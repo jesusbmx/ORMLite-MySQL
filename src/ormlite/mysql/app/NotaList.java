@@ -3,8 +3,10 @@ package ormlite.mysql.app;
 
 import java.util.ArrayList;
 import java.sql.SQLException;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+
 import ormlite.mysql.model.Nota;
 import ormlite.mysql.model.NotaDao;
 
