@@ -43,10 +43,11 @@ public class NotaDialog extends javax.swing.JDialog {
         btnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nota");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.lightGray));
 
-        lblTitulo.setText("Nota");
+        lblTitulo.setText("...");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -55,7 +56,7 @@ public class NotaDialog extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitulo)
-                .addContainerGap(366, Short.MAX_VALUE))
+                .addContainerGap(383, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +178,7 @@ public class NotaDialog extends javax.swing.JDialog {
         if (nota != null) {
             this.btnDelete.setEnabled(true);
             SimpleDateFormat format = new SimpleDateFormat("EEEE, dd MMM yyyy, hh:mm:ss aa");
-            this.setTitle(format.format(new Date(nota.fecha)));
+            this.lblTitulo.setText(format.format(new Date(nota.fecha)));
             this.texto.setText( nota.texto );
         }
     }
