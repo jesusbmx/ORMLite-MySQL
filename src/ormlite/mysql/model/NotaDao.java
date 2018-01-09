@@ -1,10 +1,12 @@
 package ormlite.mysql.model;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.table.TableUtils;
-import java.sql.SQLException;
-import java.util.List;
+
 import ormlite.mysql.model.base.MySQL;
 
 public class NotaDao extends MySQL {
