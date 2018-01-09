@@ -1,8 +1,11 @@
 package ormlite.mysql.model;
 
+import java.util.Date;
+
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+
 
 @DatabaseTable(tableName = "nota")
 public class Nota {
@@ -13,6 +16,6 @@ public class Nota {
     @DatabaseField
     public String texto;
     
-    @DatabaseField(dataType = DataType.LONG)
-    public long fecha;
+    @DatabaseField(dataType = DataType.DATE)
+    public Date fecha;
 }

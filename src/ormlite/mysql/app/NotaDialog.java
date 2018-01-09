@@ -145,7 +145,7 @@ public class NotaDialog extends javax.swing.JDialog {
         try {
             Nota nota = this.getNota();
             nota.texto = this.texto.getText().trim();
-            nota.fecha = System.currentTimeMillis();
+            nota.fecha = new Date(System.currentTimeMillis());
             // insert or update
             if (list.getDao().save(nota)) {
                 list.loadList();
@@ -179,7 +179,7 @@ public class NotaDialog extends javax.swing.JDialog {
         if (nota != null) {
             this.btnDelete.setEnabled(true);
             SimpleDateFormat format = new SimpleDateFormat("EEEE, dd MMM yyyy, hh:mm:ss aa");
-            this.lblTitulo.setText(format.format(new Date(nota.fecha)));
+            this.lblTitulo.setText(format.format(nota.fecha));
             this.texto.setText( nota.texto );
         }
     }
