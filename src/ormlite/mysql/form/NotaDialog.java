@@ -1,4 +1,4 @@
-package ormlite.mysql.app;
+package ormlite.mysql.form;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;

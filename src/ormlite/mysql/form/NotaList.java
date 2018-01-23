@@ -1,5 +1,5 @@
 
-package ormlite.mysql.app;
+package ormlite.mysql.form;
 
 import java.util.ArrayList;
 import java.sql.SQLException;
@@ -8,7 +8,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 import ormlite.mysql.model.Nota;
-import ormlite.mysql.model.NotaDao;
+import ormlite.mysql.model.dao.NotaDao;
 
 /**
  *
@@ -24,7 +24,7 @@ public class NotaList extends javax.swing.JFrame {
      */
     public NotaList() {
         dao = new NotaDao();
-        list = new ArrayList<>();
+        list = new ArrayList<Nota>();
         //
         initComponents();
     }
@@ -42,7 +42,7 @@ public class NotaList extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList = new javax.swing.JList<>();
+        jList = new javax.swing.JList<String>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ORMLite - MySQL");
@@ -149,7 +149,7 @@ public class NotaList extends javax.swing.JFrame {
             this.list.clear();
             this.list.addAll(dao.findAll());
             
-            DefaultListModel<String> listModel = new DefaultListModel<>();
+            DefaultListModel<String> listModel = new DefaultListModel<String>();
             jList.setModel(listModel);
             
             for (Nota nota : this.list) {
@@ -179,42 +179,6 @@ public class NotaList extends javax.swing.JFrame {
     
     public void display(String message) {
         JOptionPane.showMessageDialog(rootPane, message);
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NotaList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NotaList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NotaList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NotaList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new NotaList().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
